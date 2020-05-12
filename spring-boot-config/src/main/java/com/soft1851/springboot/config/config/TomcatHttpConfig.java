@@ -21,7 +21,7 @@ public class TomcatHttpConfig {
             @Override
             protected void postProcessContext(Context context) {
                 SecurityConstraint constraint = new SecurityConstraint();
-//                constraint.setUserConstraint("CONFIDENTIAL");
+                constraint.setUserConstraint("CONFIDENTIAL");
                 SecurityCollection collection = new SecurityCollection();
                 collection.addPattern("/*");
                 constraint.addCollection(collection);
