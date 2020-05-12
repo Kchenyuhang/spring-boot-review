@@ -91,7 +91,6 @@ public class MessageServiceImpl implements MessageService {
     public Message getMessage(Integer id) {
         // findOne的速度快于findById
         Optional<Message> msg = messageRepository.findById(id);
-        // Optional<Message> msg = messageRepository.findOne(Example.of(Message.builder().msgId(id).build()));
         return msg.orElse(null);
     }
 }
