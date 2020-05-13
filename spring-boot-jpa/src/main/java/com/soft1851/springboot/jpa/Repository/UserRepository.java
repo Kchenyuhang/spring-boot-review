@@ -44,23 +44,23 @@ public interface UserRepository extends JpaRepository<User, Long> {
     /**
      * 自定义JPQL查询，类似 Hibernate的 HQL语法，在接口上使用 @Query
      *
-     * @param id
+     * @param userId
      * @return User
      */
     @Query("select u from User u where u.userId = ?1")
-    User findById(long id);
+    User findById(long userId);
 
     /**
      * 按id修改nickName
      *
      * @param nickName
-     * @param id
+     * @param userId
      * @return int
      */
     @Modifying
     @Transactional(rollbackFor = RuntimeException.class)
     @Query(value = "update user set nick_name = ?1 where user_id = ?2", nativeQuery = true)
-    int updateNickName(String nickName, long id);
+    int updateNickName(String nickName, long userId);
 
 
     /**

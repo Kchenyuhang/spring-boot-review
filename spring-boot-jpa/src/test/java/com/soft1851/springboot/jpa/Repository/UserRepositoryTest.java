@@ -109,4 +109,30 @@ class UserRepositoryTest {
         Optional<User> optionalUser = userRepository.findOne(Example.of(user1));
         log.info("单个查询结果： {}", optionalUser.orElse(null));
     }
+
+    //根据方法名解析的基础功能
+    @Test
+    void findByUserNameAndPassword() {
+//        User user = User.builder().userName("saber").password("saber123").build();
+        User user = userRepository.findByUserNameAndPassword("saber","saber123");
+        log.info(String.valueOf(user));
+    }
+
+    @Test
+    void findByNickName() {
+        List<User> users = userRepository.findByNickName("nickName");
+        users.forEach(user -> log.info(user.toString()));
+    }
+
+    @Test
+    void findUsersByAgeGreaterThan() {
+        List<User> users = userRepository.findUsersByAgeGreaterThan(20);
+        users.forEach(user -> log.info(user.toString()));
+    }
+
+    @Test
+    void  findById() {
+        User user = userRepository.findById(1L);
+        log.info(user.toString());
+    }
 }
