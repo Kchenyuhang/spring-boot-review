@@ -1,13 +1,11 @@
-package com.soft1851.springboot.jpa.Repository;
+package com.soft1851.springboot.jpa.repository;
 
 import com.soft1851.springboot.jpa.model.User;
+import com.soft1851.springboot.jpa.repository.test2.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
@@ -114,7 +112,7 @@ class UserRepositoryTest {
     @Test
     void findByUserNameAndPassword() {
 //        User user = User.builder().userName("saber").password("saber123").build();
-        User user = userRepository.findByUserNameAndPassword("saber","saber123");
+        User user = userRepository.findByUserNameAndPassword("saber", "saber123");
         log.info(String.valueOf(user));
     }
 
@@ -131,8 +129,65 @@ class UserRepositoryTest {
     }
 
     @Test
-    void  findById() {
+    void findById() {
         User user = userRepository.findById(1L);
         log.info(user.toString());
     }
+
+    //***********************分割线*************************
+
+    @Test
+    void findUserByNickNameLike() {
+        List<User> users = userRepository.findUserByNickNameLike("%nickName%");
+        users.forEach(user -> log.info(user.toString()));
+    }
+
+    @Test
+    void userDefinedMethod() {
+        List<User> users = userRepository.findByAge(20);
+        List<User> users1 = userRepository.findByPassword("saber123");
+        List<User> users2 = userRepository.definedFindAll();
+        users.forEach(user -> log.info(user.toString()));
+        System.out.println("*****************************");
+        users1.forEach(user -> log.info(user.toString()));
+        System.out.println("*****************************");
+        users2.forEach(user -> log.info(user.toString()));
+    }
+
+    @Test
+    void testPageMethod() {
+        int page = 1, size = 2;
+//        Sort sort = new Sort(Sort.Direction.DESC, "userId");
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "userId");
+        Page<User> users = userRepository.findAllByPage(pageable);
+        log.info("总记录数： {}", users.getTotalElements());
+        log.info("当前页记录数： {}", users.getNumberOfElements());
+        log.info("每页记录数： {}", users.getSize());
+        log.info("获取总页数： {}", users.getTotalPages());
+        log.info("查询结果： {}", users.getContent());
+        log.info("当前页（从0开始计）： {}", users.getNumber());
+        log.info("是否为首页： {}", users.isFirst());
+        log.info("是否为尾页： {}", users.isLast());
+
+        Page<User> users1 = userRepository.findByNickName("nickName", pageable);
+        log.info("总记录数： {}", users1.getTotalElements());
+        log.info("当前页记录数： {}", users1.getNumberOfElements());
+        log.info("每页记录数： {}", users1.getSize());
+        log.info("获取总页数： {}", users1.getTotalPages());
+        log.info("查询结果： {}", users1.getContent());
+        log.info("当前页（从0开始计）： {}", users1.getNumber());
+        log.info("是否为首页： {}", users1.isFirst());
+        log.info("是否为尾页： {}", users1.isLast());
+
+        Slice<User> users2 = userRepository.findByNickNameAndAge("nickName",30,pageable);
+//        log.info("总记录数： {}", users2.getTotalElements());
+        log.info("当前页记录数： {}", users2.getNumberOfElements());
+        log.info("每页记录数： {}", users2.getSize());
+//        log.info("获取总页数： {}", users2.getTotalPages());
+        log.info("查询结果： {}", users2.getContent());
+        log.info("当前页（从0开始计）： {}", users2.getNumber());
+        log.info("是否为首页： {}", users2.isFirst());
+        log.info("是否为尾页： {}", users2.isLast());
+    }
+
 }
