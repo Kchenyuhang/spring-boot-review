@@ -8,6 +8,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMailMessage;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,6 +24,7 @@ import java.util.Map;
  */
 @Service
 @Slf4j
+//@Component
 public class MailServiceImpl implements MailService {
     /**
      * 读入配置文件中的邮箱发送者设置

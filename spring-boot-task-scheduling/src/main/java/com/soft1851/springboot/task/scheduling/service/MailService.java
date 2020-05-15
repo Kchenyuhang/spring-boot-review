@@ -47,4 +47,15 @@ public interface MailService {
      * @throws MessagingException
      */
     void sendImgMail(String to, String subject, String content, Map<String,String> imgMap) throws MessagingException;
+
+//    /**
+//     * 发送定时邮件
+//     * 使用图片模板
+//     * @param to
+//     * @param subject
+//     * @param content
+//     * @param imgMap
+//     * @throws MessagingException
+//     */
+//    void sendTimeImageMail(String to, String subject, String content, Map<String,String> imgMap) throws MessagingException;
 }
