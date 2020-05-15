@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
  * @Description
  * @Date 2020/5/14
  */
-@Component
+//@Component
 public class Task2 {
     private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy年MM月dd日 hh:mm:ss");
 
