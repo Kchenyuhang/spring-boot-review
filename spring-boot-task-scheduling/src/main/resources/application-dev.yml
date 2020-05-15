@@ -22,7 +22,7 @@ spring:
   #jpa 配置
   jpa:
     database: mysql
-    show-sql: true
+    show-sql: false
     generate-ddl: true
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:

@@ -18,7 +18,7 @@ import java.util.Map;
  * @Description
  * @Date 2020/5/15
  */
-@Component
+//@Component
 @Slf4j
 public class TimeMailTask {
     @Resource

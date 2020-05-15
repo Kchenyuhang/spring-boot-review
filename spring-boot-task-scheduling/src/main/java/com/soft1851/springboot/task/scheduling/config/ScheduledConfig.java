@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
  * @Description 定时任务配置
  * @Date 2020/5/14
  */
-@Configuration
+//@Configuration
 public class ScheduledConfig implements SchedulingConfigurer {
     @Override
     public void configureTasks(ScheduledTaskRegistrar scheduledTaskRegistrar) {
