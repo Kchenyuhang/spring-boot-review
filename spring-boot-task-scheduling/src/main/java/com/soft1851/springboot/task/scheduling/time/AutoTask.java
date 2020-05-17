@@ -23,8 +23,8 @@ import java.util.concurrent.Executors;
  * @Date 2020/5/15
  */
 @Slf4j
-@Configuration
-@Component
+//@Configuration
+//@Component
 public class AutoTask implements SchedulingConfigurer {
     @Resource
     private CronRepository cronRepository;

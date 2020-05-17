@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/bbs?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
-    password: root
+    password: ENC(2f4nGo/79Lf+QA28d3KWoA==)
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       auto-commit: true
@@ -34,3 +34,7 @@ spring:
     password: jogfwxnofmwgjaah
     port: 25
     username: 1797262364@qq.com
+#jasypt加密
+jasypt:
+  encryptor:
+    password: king991214
