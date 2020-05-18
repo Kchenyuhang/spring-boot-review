@@ -1,4 +1,4 @@
-package com.soft1851.springboot.task.scheduling.time;
+package com.soft1851.springboot.task.scheduling.task;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
@@ -12,10 +12,8 @@ import cn.hutool.http.HttpUtil;
 import com.soft1851.springboot.task.scheduling.model.Coder;
 import com.soft1851.springboot.task.scheduling.repository.CoderRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
@@ -49,7 +47,6 @@ public class MultiThreadScheduleTask {
         int index = RandomUtil.randomInt(1, 5);
         Coder coder = coderRepository.findById(index).get();
         download(coder);
-
     }
 
     @Async

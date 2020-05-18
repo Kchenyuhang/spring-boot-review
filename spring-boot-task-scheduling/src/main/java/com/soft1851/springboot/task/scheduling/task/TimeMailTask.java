@@ -1,14 +1,12 @@
-package com.soft1851.springboot.task.scheduling.time;
+package com.soft1851.springboot.task.scheduling.task;
 
 import com.soft1851.springboot.task.scheduling.model.User;
 import com.soft1851.springboot.task.scheduling.repository.UserRepository;
 import com.soft1851.springboot.task.scheduling.service.MailService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import javax.mail.MessagingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

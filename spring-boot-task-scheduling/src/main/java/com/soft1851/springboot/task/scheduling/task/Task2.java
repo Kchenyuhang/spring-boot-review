@@ -1,7 +1,6 @@
-package com.soft1851.springboot.task.scheduling.time;
+package com.soft1851.springboot.task.scheduling.task;
 
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
