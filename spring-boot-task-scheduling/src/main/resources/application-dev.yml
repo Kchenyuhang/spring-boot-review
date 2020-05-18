@@ -1,5 +1,8 @@
 server:
-  port: 8080
+  port: 9002
+  trustedPathPrefix: /external/
+  trustedPort: 9003
+
 
 # 单数据源配置
 spring:
