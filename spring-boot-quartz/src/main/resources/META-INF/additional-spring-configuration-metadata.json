@@ -4,10 +4,5 @@
       "name": "quartz.enabled",
       "type": "java.lang.String",
       "description": "Description for quartz.enabled."
-    },
-    {
-      "name": "devtools.restart.enabled.false exclude",
-      "type": "java.lang.String",
-      "description": "Description for devtools.restart.enabled.false exclude."
-    }
-  ] }
+  }
+] }

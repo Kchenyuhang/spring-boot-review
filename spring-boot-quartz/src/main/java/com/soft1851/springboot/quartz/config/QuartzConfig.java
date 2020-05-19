@@ -17,9 +17,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * @Author yhChen
- * @Description Quartz核心配置类
- * @Date 2020/5/18
+ * @Author: yhChen
+ * @Date: 2020/5/18
+ * @Description: Quartz的核心配置类
  */
 @Configuration
 public class QuartzConfig {

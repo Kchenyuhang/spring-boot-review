@@ -1,5 +1,6 @@
 package com.soft1851.springboot.quartz.job;
 
+import cn.hutool.core.date.DateUtil;
 import com.soft1851.springboot.quartz.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
@@ -7,14 +8,17 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * @Author yhChen
- * @Description
- * @Date 2020/5/18
+ * @Author: yhChen
+ * @Date: 2020/5/18
+ * @Description: @DisallowConcurrentExecution 标记用在实现Job的类上面,意思是不允许并发执行
+ * 注意org.quartz.threadPool.threadCount线程池中线程的数量至少要多个,否则@DisallowConcurrentExecution不生效
+ * 假如Job的设置时间间隔为3秒,但Job执行时间是5秒,设置@DisallowConcurrentExecution以后程序会等任务执行完毕以后再去执行,否则会在3秒时再启用新的线程执行
  */
 @DisallowConcurrentExecution
 @Component
@@ -41,6 +45,7 @@ public class DynamicJob implements Job {
         log.info("Running Job jar path : {} ", jarPath);
         log.info("Running Job parameter : {} ", parameter);
         log.info("Running Job vmParam : {} ", vmParam);
+        log.info("Running Job time : {}", DateUtil.now());
         long startTime = System.currentTimeMillis();
         if (!StringUtils.isEmpty(jarPath)) {
             File jar = new File(jarPath);

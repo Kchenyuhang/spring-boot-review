@@ -10,9 +10,9 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @Author yhChen
- * @Description 动态任务业务类
- * @Date 2020/5/18
+ * @Author: yhChen
+ * @Date: 2020/5/18
+ * @Description: 动态任务业务类
  */
 @Service
 public class DynamicJobService {

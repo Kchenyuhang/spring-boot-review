@@ -2,10 +2,11 @@ package com.soft1851.springboot.quartz.controller.dto;
 
 import lombok.Data;
 
+
 /**
- * @Author yhChen
- * @Description 修改cron表达式的dto类
- * @Date 2020/5/18
+ * @Author: yhChen
+ * @Date: 2020/5/18
+ * @Description: 修改cron表达式的dto类
  */
 @Data
 public class ModifyCronDto {

@@ -10,13 +10,13 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * @Author yhChen
- * @Description 作业实体类
- * @Date 2020/5/18
+ * @Author: yhChen
+ * @Date: 2020/5/18
+ * @Description: 作业实体类
  */
 @Entity
 @Data
-@Accessors(chain = true)
+//@Accessors(chain = true)
 public class JobEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

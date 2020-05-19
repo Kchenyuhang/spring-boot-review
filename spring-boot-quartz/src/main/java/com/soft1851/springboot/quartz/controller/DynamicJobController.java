@@ -18,9 +18,9 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * @Author yhChen
- * @Description Job控制器
- * @Date 2020/5/18
+ * @Author: yhChen
+ * @Date: 2020/5/18
+ * @Description: Job控制器
  */
 @RestController
 @RequestMapping(value = "/job")

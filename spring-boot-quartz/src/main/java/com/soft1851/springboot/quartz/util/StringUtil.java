@@ -3,9 +3,9 @@ package com.soft1851.springboot.quartz.util;
 import java.util.List;
 
 /**
- * @Author yhChen
- * @Description
- * @Date 2020/5/18
+ * @Author: yhChen
+ * @Date: 2020/5/18
+ * @Description: 自定义枚举单例对象 StringUtil
  */
 public enum StringUtil {
     ;
